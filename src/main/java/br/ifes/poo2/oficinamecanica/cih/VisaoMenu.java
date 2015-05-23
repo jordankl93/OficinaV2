@@ -14,13 +14,14 @@ import java.util.Scanner;
  * @author RafaelBroedel
  */
 public class VisaoMenu {
-    private Scanner ler = new Scanner(System.in);
+    private final Scanner ler = new Scanner(System.in);
     
     public void menuInicial(){
         System.out.println("1 - Criar Cliente");
         System.out.println("2 - Criar Vendedor");
         System.out.println("3 - Criar Gerente");
         System.out.println("0 - SAIR");
+        System.out.println(" ");
     }
     
     public void menuCriarCliente(){
@@ -31,19 +32,19 @@ public class VisaoMenu {
         System.out.print("Insira data de nascimento: ");
         ClienteModelo.setDataDeNascimento(ler.next());
         System.out.print("Insira e-mail: ");
-        ClienteModelo.setNome(ler.next());
+        ClienteModelo.setEmail(ler.next());
 
     }
     
     public void menuCriarFuncinario() {
         System.out.print("Insira nome: ");
-        FuncionarioModelo.setNome(ler.nextLine());
+        FuncionarioModelo.setNome(ler.next());
         System.out.print("Insira CPF: ");
         FuncionarioModelo.setCpf(ler.nextLong());
         System.out.print("Insira data de nascimento: ");
-        FuncionarioModelo.setDataDeNascimento(ler.nextLine());
+        FuncionarioModelo.setDataDeNascimento(ler.next());
         System.out.print("Insira e-mail: ");
-        FuncionarioModelo.setNome(ler.nextLine());
+        FuncionarioModelo.setEmail(ler.next());
         System.out.print("Insira carteira de trabalho: ");
         FuncionarioModelo.setCarteiraDeTrabalho(ler.nextLong());
         System.out.print("Insira salarioFixo: ");

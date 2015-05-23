@@ -5,6 +5,8 @@
  */
 package br.ifes.poo2.oficinamecanica.cci;
 
+import br.ifes.poo2.oficinamecanica.cdp.Pessoa;
+import br.ifes.poo2.oficinamecanica.cgt.AplCriarPessoa;
 import br.ifes.poo2.oficinamecanica.cih.VisaoMenu;
 import br.ifes.poo2.oficinamecanica.util.TipoPessoaIncorretoException;
 import java.util.logging.Level;
@@ -16,6 +18,8 @@ import java.util.logging.Logger;
  */
 public class Controle {
     private VisaoMenu visao = new VisaoMenu();
+    private AplCriarPessoa aplCriarPessoa = new AplCriarPessoa();
+    private Pessoa pessoa;
     
     public void iniciar(){
         boolean continuar = true;
@@ -27,6 +31,8 @@ public class Controle {
             } else {
                 try {
                     this.selecionarOpcao(opcao);
+                    visao.print(pessoa.toString());
+                    visao.print(" ");
                 } catch (TipoPessoaIncorretoException ex) {
                     Logger.getLogger(Controle.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -38,15 +44,18 @@ public class Controle {
         switch (opcao){
             case 1:
                 visao.menuCriarCliente();
-                visao.print("Cliente criado");
+                pessoa = aplCriarPessoa.criarCliente();
+                visao.print("-- Cliente criado --");
                 break;
             case 2:
                 visao.menuCriarFuncinario();
-                visao.print("Vendedor criado");
+                pessoa = aplCriarPessoa.criarVendedor();
+                visao.print("-- Vendedor criado --");
                 break;
             case 3:
                 visao.menuCriarFuncinario();
-                visao.print("Gerente criado");
+                pessoa = aplCriarPessoa.criarGerente();
+                visao.print("-- Gerente criado --");
                 break;
             default:
                 throw new TipoPessoaIncorretoException();

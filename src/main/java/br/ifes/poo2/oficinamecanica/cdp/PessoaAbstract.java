@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 public abstract class PessoaAbstract implements Pessoa{
     private String nome, email;
     private long cpf;
-    private Date nascimento;
+    private String nascimento;
 
     public String getNome() {
         return nome;
@@ -42,11 +42,11 @@ public abstract class PessoaAbstract implements Pessoa{
         this.cpf = cpf;
     }
 
-    public Date getNascimento() {
+    public String getDataDeNascimento() {
         return nascimento;
     }
 
-    public void setNascimento(Date nascimento) {
+    public void setDataDeNascimento(String nascimento) {
         this.nascimento = nascimento;
     }
 
@@ -59,6 +59,11 @@ public abstract class PessoaAbstract implements Pessoa{
             Logger.getLogger(PessoaAbstract.class.getName()).log(Level.SEVERE, null, ex);
         }
         return obj;
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" + "nome=" + nome + ", email=" + email + ", cpf=" + cpf + ", nascimento=" + nascimento + '}';
     }
     
     

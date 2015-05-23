@@ -24,9 +24,9 @@ public interface Gerente {
 
     public void setCpf(long cpf);
 
-    public Date getNascimento();
+    public String getDataDeNascimento();
 
-    public void setNascimento(Date nascimento);
+    public void setDataDeNascimento(String nascimento);
     
     public long getCarteiraDeTrabalho();
 

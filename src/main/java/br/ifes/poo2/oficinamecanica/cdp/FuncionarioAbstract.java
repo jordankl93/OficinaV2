@@ -28,6 +28,11 @@ public abstract class FuncionarioAbstract extends PessoaAbstract{
     public void setSalarioFixo(double salarioFixo) {
         this.salarioFixo = salarioFixo;
     }
+
+    @Override
+    public String toString() {
+        return "Funcionario{" + "nome=" + super.getEmail() + ", email=" + super.getEmail() + ", cpf=" + super.getCpf() + ", nascimento=" + super.getDataDeNascimento() + ", carteiraDeTrabalho=" + carteiraDeTrabalho + ", salarioFixo=" + salarioFixo + '}';
+    }
     
     
 }

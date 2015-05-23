@@ -5,7 +5,9 @@
  */
 package br.ifes.poo2.oficinamecanica.util;
 
+import br.ifes.poo2.oficinamecanica.cdp.FuncionarioAbstract;
 import br.ifes.poo2.oficinamecanica.cdp.Pessoa;
+import br.ifes.poo2.oficinamecanica.cdp.PessoaAbstract;
 
 /**
  *
@@ -13,7 +15,10 @@ import br.ifes.poo2.oficinamecanica.cdp.Pessoa;
  */
 public class FabricaPessoa {
     private Pessoa cliente, vendedor, gerente;
-    
+    private FuncionarioBuilder funcionarioBuilder = new FuncionarioBuilder();
+    private FuncionarioDirector funcionarioDirector = new FuncionarioDirector();
+    private ClienteBuilder clienteBuilder = new ClienteBuilder();
+    private ClienteDirector clienteDirector = new ClienteDirector();
     //Singleton
     private static FabricaPessoa instancia;
     private FabricaPessoa(){};
@@ -32,6 +37,8 @@ public class FabricaPessoa {
                 } else {
                     cliente = cliente.clone();
                 }
+                clienteBuilder.setCliente((PessoaAbstract) cliente);
+                cliente = clienteDirector.build(clienteBuilder);
                 return cliente;
             case "vendedor":
                 if(vendedor == null){
@@ -39,6 +46,8 @@ public class FabricaPessoa {
                 } else {
                     vendedor = vendedor.clone();
                 }
+                funcionarioBuilder.setFuncionario((FuncionarioAbstract) vendedor);
+                vendedor = funcionarioDirector.build(funcionarioBuilder);
                 return vendedor;
             case "gerente":
                 if (gerente == null){
@@ -46,6 +55,8 @@ public class FabricaPessoa {
                 } else {
                     gerente = gerente.clone();
                 }
+                funcionarioBuilder.setFuncionario((FuncionarioAbstract) gerente);
+                gerente = funcionarioDirector.build(funcionarioBuilder);
                 return gerente;
             default:
                 throw new TipoPessoaIncorretoException();
