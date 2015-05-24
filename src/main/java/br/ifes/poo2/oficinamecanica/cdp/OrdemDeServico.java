@@ -14,7 +14,7 @@ import java.util.List;
  * @author RafaelBroedel
  */
 public class OrdemDeServico implements Ordem{
-    private Date dataInicio, dataFim;
+    private String dataInicio, dataFim;
     private Double valorTotal;
     
     private Veiculo veiculo;
@@ -23,19 +23,19 @@ public class OrdemDeServico implements Ordem{
     private List<Venda> vendasProdutos = new ArrayList<Venda>();
     private List<Venda> vendasServicos = new ArrayList<Venda>();
 
-    public Date getDataInicio() {
+    public String getDataInicio() {
         return dataInicio;
     }
 
-    public void setDataInicio(Date dataInicio) {
+    public void setDataInicio(String dataInicio) {
         this.dataInicio = dataInicio;
     }
 
-    public Date getDataFim() {
+    public String getDataFim() {
         return dataFim;
     }
 
-    public void setDataFim(Date dataFim) {
+    public void setDataFim(String dataFim) {
         this.dataFim = dataFim;
     }
 
