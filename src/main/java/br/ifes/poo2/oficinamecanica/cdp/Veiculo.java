@@ -9,7 +9,10 @@ package br.ifes.poo2.oficinamecanica.cdp;
  *
  * @author RafaelBroedel
  */
-public interface Veiculo {
+public interface Veiculo extends Cloneable{
+    
+    public enum Tipo {CARRO, MOTO, CAMINHAO};
+    
     public String getPlaca();
 
     public void setPlaca(String placa);
@@ -25,4 +28,9 @@ public interface Veiculo {
     @Override
     public String toString();
     
+    public Veiculo clone();
+    
+    public Tipo getTipo();
+
+    public void setTipo(Tipo tipo);
 }

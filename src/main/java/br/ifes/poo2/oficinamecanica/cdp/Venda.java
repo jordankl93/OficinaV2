@@ -5,24 +5,29 @@
  */
 package br.ifes.poo2.oficinamecanica.cdp;
 
-import java.util.Date;
-
 /**
  *
  * @author RafaelBroedel
  */
-public interface Venda {
+public interface Venda extends Cloneable{
     
+    public enum Tipo {PRODUTO, SERVICO};
+    public enum Status {ABERTO, CONCLUIDO, INSTALADO, EMEXECUCAO, NAFILA};
+    
+    public Tipo getTipo();
+    public void setTipo(Tipo tipo);
     public String getDescricao();
     public void setDescricao(String descricao);
-    public Double getValor();
-    public void setValor(Double valor);
-    public Date getDataDaVenda();
-    public void setDataDaVenda(Date dataDaVenda);
+    public Double getValorUnitario();
+    public void setValorUnitario(Double valorUnitario);
+    public Double getValorTotal();
+     public void setValorTotal(Double valorTotal);
+     public int getQuantidade();
+     public void setQuantidade(int quantidade);
+    public String getDataDaVenda();
+    public void setDataDaVenda(String dataDaVenda);
     public Status getStatus();
     public void setStatus(Status status);
-
-    @Override
-    public String toString();
     
+    public Venda clone();
 }

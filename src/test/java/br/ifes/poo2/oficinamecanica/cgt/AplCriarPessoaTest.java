@@ -54,7 +54,7 @@ public class AplCriarPessoaTest {
         FuncionarioModelo.setDataDeNascimento("12/19/1991");
         FuncionarioModelo.setEmail("kamila@");
         FuncionarioModelo.setCarteiraDeTrabalho(123);
-        FuncionarioModelo.setSalarioFixo(1000.10);
+        FuncionarioModelo.setSalarioFixo(1000);
 
         FuncionarioAbstract result = (FuncionarioAbstract) instance.criarVendedor();
         
@@ -63,7 +63,7 @@ public class AplCriarPessoaTest {
         assertEquals(FuncionarioModelo.getDataDeNascimento(), result.getDataDeNascimento());
         assertEquals(FuncionarioModelo.getEmail(), result.getEmail());
         assertEquals(FuncionarioModelo.getCarteiraDeTrabalho(), result.getCarteiraDeTrabalho());
-        //assertEquals(FuncionarioModelo.getSalarioFixo(), result.getSalarioFixo());
+        assertEquals(FuncionarioModelo.getSalarioFixo(), result.getSalarioFixo(),1); //delta?
     }
 
     /**
@@ -85,7 +85,7 @@ public class AplCriarPessoaTest {
         assertEquals(FuncionarioModelo.getDataDeNascimento(), result.getDataDeNascimento());
         assertEquals(FuncionarioModelo.getEmail(), result.getEmail());
         assertEquals(FuncionarioModelo.getCarteiraDeTrabalho(), result.getCarteiraDeTrabalho());
-        //assertEquals(FuncionarioModelo.getSalarioFixo(), result.getSalarioFixo());
+        assertEquals(FuncionarioModelo.getSalarioFixo(), result.getSalarioFixo(),1); //delta?
     }
     
 }

@@ -7,6 +7,7 @@ package br.ifes.poo2.oficinamecanica.cih;
 
 import br.ifes.poo2.oficinamecanica.util.ClienteModelo;
 import br.ifes.poo2.oficinamecanica.util.FuncionarioModelo;
+import br.ifes.poo2.oficinamecanica.util.VeiculoModelo;
 import java.util.Scanner;
 
 /**
@@ -20,6 +21,7 @@ public class VisaoMenu {
         System.out.println("1 - Criar Cliente");
         System.out.println("2 - Criar Vendedor");
         System.out.println("3 - Criar Gerente");
+        System.out.println("4 - Criar Veiculo");
         System.out.println("0 - SAIR");
         System.out.println(" ");
     }
@@ -49,6 +51,21 @@ public class VisaoMenu {
         FuncionarioModelo.setCarteiraDeTrabalho(ler.nextLong());
         System.out.print("Insira salarioFixo: ");
         FuncionarioModelo.setSalarioFixo(ler.nextDouble());
+    }
+    
+    public void menuCriarVeiculo(){
+        System.out.println("1 - Criar Carro");
+        System.out.println("2 - Criar Moto");
+        System.out.println("3 - Criar Caminhao");
+    }
+    
+    public void menuDadosVeiculo(){
+        System.out.print("Informe placa: ");
+        VeiculoModelo.setPlaca(ler.next());
+        System.out.print("Informe modelo: ");
+        VeiculoModelo.setModelo(ler.next());
+        System.out.print("Informe cor: ");
+        VeiculoModelo.setCor(ler.next());
     }
     
     public int lerEntrada(){

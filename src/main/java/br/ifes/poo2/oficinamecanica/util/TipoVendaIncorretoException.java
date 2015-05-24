@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.ifes.poo2.oficinamecanica.cdp;
+package br.ifes.poo2.oficinamecanica.util;
 
 /**
  *
  * @author RafaelBroedel
  */
-public enum Status {
-    ABERTO, CONCLUIDO, INSTALADO, EMEXECUCAO, NAFILA;
+public class TipoVendaIncorretoException extends Exception {
+
+    public TipoVendaIncorretoException() {
+        super("Tipo de venda incorreto.");
+    }
+    
 }

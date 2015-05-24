@@ -15,10 +15,10 @@ import br.ifes.poo2.oficinamecanica.cdp.PessoaAbstract;
  */
 public class FabricaPessoa {
     private Pessoa cliente, vendedor, gerente;
-    private FuncionarioBuilder funcionarioBuilder = new FuncionarioBuilder();
-    private FuncionarioDirector funcionarioDirector = new FuncionarioDirector();
-    private ClienteBuilder clienteBuilder = new ClienteBuilder();
-    private ClienteDirector clienteDirector = new ClienteDirector();
+    private final FuncionarioBuilder funcionarioBuilder = new FuncionarioBuilder();
+    private final FuncionarioDirector funcionarioDirector = new FuncionarioDirector();
+    private final ClienteBuilder clienteBuilder = new ClienteBuilder();
+    private final ClienteDirector clienteDirector = new ClienteDirector();
     //Singleton
     private static FabricaPessoa instancia;
     private FabricaPessoa(){};

@@ -5,14 +5,32 @@
  */
 package br.ifes.poo2.oficinamecanica.cdp;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
 /**
  *
  * @author RafaelBroedel
  */
-public enum VeiculoEnum implements Veiculo{
-    CARRO, MOTO, CAMINHAO;
+public class VeiculoImp implements Veiculo{
     
     private String placa, modelo, cor;
+    private Tipo tipo;
+
+    public VeiculoImp(Tipo tipo) {
+        this.tipo = tipo;
+    }
+
+    @Override
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    @Override
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
 
     @Override
     public String getPlaca() {
@@ -46,7 +64,18 @@ public enum VeiculoEnum implements Veiculo{
 
     @Override
     public String toString() {
-        return "VeiculoEnum{" + "placa=" + placa + ", modelo=" + modelo + ", cor=" + cor + '}';
+        return "Veiculo{" + "placa=" + placa + ", modelo=" + modelo + ", cor=" + cor + '}';
+    }
+
+    @Override
+    public Veiculo clone(){
+        Veiculo obj = null;
+        try {
+            obj = (Veiculo) super.clone();
+        } catch (CloneNotSupportedException ex) {
+            Logger.getLogger(PessoaAbstract.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return obj;
     }
     
 }
