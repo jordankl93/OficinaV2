@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.ifes.poo2.oficinamecanica.util;
+package br.ifes.poo2.oficinamecanica.cih;
 
 /**
  *
  * @author RafaelBroedel
  */
-public class VeiculoModelo {
+public class VeiculoEstatico {
     private static String placa, modelo, cor;
 
     public static String getPlaca() {
@@ -17,7 +17,7 @@ public class VeiculoModelo {
     }
 
     public static void setPlaca(String placa) {
-        VeiculoModelo.placa = placa;
+        VeiculoEstatico.placa = placa;
     }
 
     public static String getModelo() {
@@ -25,7 +25,7 @@ public class VeiculoModelo {
     }
 
     public static void setModelo(String modelo) {
-        VeiculoModelo.modelo = modelo;
+        VeiculoEstatico.modelo = modelo;
     }
 
     public static String getCor() {
@@ -33,7 +33,7 @@ public class VeiculoModelo {
     }
 
     public static void setCor(String cor) {
-        VeiculoModelo.cor = cor;
+        VeiculoEstatico.cor = cor;
     }
     
 }

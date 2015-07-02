@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.ifes.poo2.oficinamecanica.util;
+package br.ifes.poo2.oficinamecanica.exceptions;
 
 /**
  *
  * @author RafaelBroedel
  */
-public class TipoPessoaIncorretoException extends Exception {
+public class OpcaoIncorretaException extends Exception {
 
-    public TipoPessoaIncorretoException() {
-        super("Tipo de Pessoa informado não existe.");
+    public OpcaoIncorretaException() {
+        super("Opcao nao existe no menu.");
     }
     
 }

@@ -5,6 +5,7 @@
  */
 package br.ifes.poo2.oficinamecanica.util;
 
+import br.ifes.poo2.oficinamecanica.cih.VeiculoEstatico;
 import br.ifes.poo2.oficinamecanica.cdp.Veiculo;
 
 /**
@@ -23,14 +24,14 @@ public class VeiculoBuilder {
     }
     
     public void addPlaca(){
-        veiculo.setPlaca(VeiculoModelo.getPlaca());
+        veiculo.setPlaca(VeiculoEstatico.getPlaca());
     }
     
     public void addModelo(){
-        veiculo.setModelo(VeiculoModelo.getModelo());
+        veiculo.setModelo(VeiculoEstatico.getModelo());
     }
     
     public void addCor(){
-        veiculo.setCor(VeiculoModelo.getCor());
+        veiculo.setCor(VeiculoEstatico.getCor());
     }
 }

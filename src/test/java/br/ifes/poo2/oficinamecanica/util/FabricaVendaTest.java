@@ -5,6 +5,7 @@
  */
 package br.ifes.poo2.oficinamecanica.util;
 
+import br.ifes.poo2.oficinamecanica.exceptions.TipoVendaIncorretoException;
 import br.ifes.poo2.oficinamecanica.cdp.Venda;
 import br.ifes.poo2.oficinamecanica.cdp.VendaImp;
 import org.junit.Before;

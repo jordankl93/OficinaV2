@@ -5,6 +5,8 @@
  */
 package br.ifes.poo2.oficinamecanica.util;
 
+import br.ifes.poo2.oficinamecanica.cih.PessoaEstatico;
+
 /**
  *
  * @author RafaelBroedel
@@ -13,12 +15,12 @@ public class FuncionarioBuilder extends PessoaBuilder {
 
     @Override
     public void addCarteiraDeTrabalho() {
-        pessoa.setCarteiraDeTrabalho(PessoaModelo.getCarteiraDeTrabalho());
+        pessoa.setCarteiraDeTrabalho(PessoaEstatico.getCarteiraDeTrabalho());
     }
 
     @Override
     public void addSalarioFixo() {
-        pessoa.setSalarioFixo(PessoaModelo.getSalarioFixo());
+        pessoa.setSalarioFixo(PessoaEstatico.getSalarioFixo());
         
     }
 

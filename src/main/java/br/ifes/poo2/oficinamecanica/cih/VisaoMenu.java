@@ -5,9 +5,6 @@
  */
 package br.ifes.poo2.oficinamecanica.cih;
 
-import br.ifes.poo2.oficinamecanica.util.ClienteModelo;
-import br.ifes.poo2.oficinamecanica.util.FuncionarioModelo;
-import br.ifes.poo2.oficinamecanica.util.VeiculoModelo;
 import java.util.Scanner;
 
 /**
@@ -28,29 +25,24 @@ public class VisaoMenu {
     
     public void menuCriarCliente(){
         System.out.print("Insira nome: ");
-        ClienteModelo.setNome(ler.next());
+        PessoaEstatico.setNome(ler.next());
         System.out.print("Insira CPF: ");
-        ClienteModelo.setCpf(ler.nextLong());
+        PessoaEstatico.setCpf(ler.nextLong());
         System.out.print("Insira data de nascimento: ");
-        ClienteModelo.setDataDeNascimento(ler.next());
+        PessoaEstatico.setDataDeNascimento(ler.next());
         System.out.print("Insira e-mail: ");
-        ClienteModelo.setEmail(ler.next());
+        PessoaEstatico.setEmail(ler.next());
+        System.out.print("Insira endereco: ");
+        PessoaEstatico.setEndereco(ler.next());
 
     }
     
     public void menuCriarFuncinario() {
-        System.out.print("Insira nome: ");
-        FuncionarioModelo.setNome(ler.next());
-        System.out.print("Insira CPF: ");
-        FuncionarioModelo.setCpf(ler.nextLong());
-        System.out.print("Insira data de nascimento: ");
-        FuncionarioModelo.setDataDeNascimento(ler.next());
-        System.out.print("Insira e-mail: ");
-        FuncionarioModelo.setEmail(ler.next());
+        this.menuCriarCliente();
         System.out.print("Insira carteira de trabalho: ");
-        FuncionarioModelo.setCarteiraDeTrabalho(ler.nextLong());
+        PessoaEstatico.setCarteiraDeTrabalho(ler.nextLong());
         System.out.print("Insira salarioFixo: ");
-        FuncionarioModelo.setSalarioFixo(ler.nextDouble());
+        PessoaEstatico.setSalarioFixo(ler.nextDouble());
     }
     
     public void menuCriarVeiculo(){
@@ -61,11 +53,11 @@ public class VisaoMenu {
     
     public void menuDadosVeiculo(){
         System.out.print("Informe placa: ");
-        VeiculoModelo.setPlaca(ler.next());
+        VeiculoEstatico.setPlaca(ler.next());
         System.out.print("Informe modelo: ");
-        VeiculoModelo.setModelo(ler.next());
+        VeiculoEstatico.setModelo(ler.next());
         System.out.print("Informe cor: ");
-        VeiculoModelo.setCor(ler.next());
+        VeiculoEstatico.setCor(ler.next());
     }
     
     public int lerEntrada(){

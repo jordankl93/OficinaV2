@@ -5,6 +5,7 @@
  */
 package br.ifes.poo2.oficinamecanica.util;
 
+import br.ifes.poo2.oficinamecanica.exceptions.TipoPessoaIncorretoException;
 import br.ifes.poo2.oficinamecanica.cdp.Pessoa;
 import br.ifes.poo2.oficinamecanica.cdp.PessoaPrototipo;
 

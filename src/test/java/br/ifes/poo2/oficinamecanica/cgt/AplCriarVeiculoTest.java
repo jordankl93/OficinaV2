@@ -6,7 +6,7 @@
 package br.ifes.poo2.oficinamecanica.cgt;
 
 import br.ifes.poo2.oficinamecanica.cdp.Veiculo;
-import br.ifes.poo2.oficinamecanica.util.VeiculoModelo;
+import br.ifes.poo2.oficinamecanica.cih.VeiculoEstatico;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -28,15 +28,15 @@ public class AplCriarVeiculoTest {
      */
     @Test
     public void testCriarCarro() {
-        VeiculoModelo.setPlaca("xxx-0000");
-        VeiculoModelo.setModelo("Corsa");
-        VeiculoModelo.setCor("preto");
+        VeiculoEstatico.setPlaca("xxx-0000");
+        VeiculoEstatico.setModelo("Corsa");
+        VeiculoEstatico.setCor("preto");
         
         Veiculo result = instance.criarCarro();
         
-        assertEquals(VeiculoModelo.getPlaca(), result.getPlaca());
-        assertEquals(VeiculoModelo.getModelo(), result.getModelo());
-        assertEquals(VeiculoModelo.getCor(), result.getCor());
+        assertEquals(VeiculoEstatico.getPlaca(), result.getPlaca());
+        assertEquals(VeiculoEstatico.getModelo(), result.getModelo());
+        assertEquals(VeiculoEstatico.getCor(), result.getCor());
     }
 
     /**
@@ -44,15 +44,15 @@ public class AplCriarVeiculoTest {
      */
     @Test
     public void testCriarMoto() {
-        VeiculoModelo.setPlaca("yyy-0000");
-        VeiculoModelo.setModelo("cg");
-        VeiculoModelo.setCor("vermelho");
+        VeiculoEstatico.setPlaca("yyy-0000");
+        VeiculoEstatico.setModelo("cg");
+        VeiculoEstatico.setCor("vermelho");
         
         Veiculo result = instance.criarMoto();
         
-        assertEquals(VeiculoModelo.getPlaca(), result.getPlaca());
-        assertEquals(VeiculoModelo.getModelo(), result.getModelo());
-        assertEquals(VeiculoModelo.getCor(), result.getCor());
+        assertEquals(VeiculoEstatico.getPlaca(), result.getPlaca());
+        assertEquals(VeiculoEstatico.getModelo(), result.getModelo());
+        assertEquals(VeiculoEstatico.getCor(), result.getCor());
     }
 
     /**
@@ -60,15 +60,15 @@ public class AplCriarVeiculoTest {
      */
     @Test
     public void testCriarCaminhao() {
-        VeiculoModelo.setPlaca("aaa-0000");
-        VeiculoModelo.setModelo("truck");
-        VeiculoModelo.setCor("branco");
+        VeiculoEstatico.setPlaca("aaa-0000");
+        VeiculoEstatico.setModelo("truck");
+        VeiculoEstatico.setCor("branco");
         
         Veiculo result = instance.criarCaminhao();
         
-        assertEquals(VeiculoModelo.getPlaca(), result.getPlaca());
-        assertEquals(VeiculoModelo.getModelo(), result.getModelo());
-        assertEquals(VeiculoModelo.getCor(), result.getCor());
+        assertEquals(VeiculoEstatico.getPlaca(), result.getPlaca());
+        assertEquals(VeiculoEstatico.getModelo(), result.getModelo());
+        assertEquals(VeiculoEstatico.getCor(), result.getCor());
     }
     
 }

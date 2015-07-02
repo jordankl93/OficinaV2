@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.ifes.poo2.oficinamecanica.util;
+package br.ifes.poo2.oficinamecanica.cih;
 
 /**
  *
  * @author RafaelBroedel
  */
-public class PessoaModelo {
+public class PessoaEstatico {
     private static String nome, email, endereco;
     private static long cpf, carteiraDeTrabalho;
     private static String dataDeNascimento;
@@ -20,7 +20,7 @@ public class PessoaModelo {
     }
 
     public static void setNome(String nome) {
-        PessoaModelo.nome = nome;
+        PessoaEstatico.nome = nome;
     }
 
     public static String getEmail() {
@@ -28,7 +28,7 @@ public class PessoaModelo {
     }
 
     public static void setEmail(String email) {
-        PessoaModelo.email = email;
+        PessoaEstatico.email = email;
     }
 
     public static long getCpf() {
@@ -36,7 +36,7 @@ public class PessoaModelo {
     }
 
     public static void setCpf(long cpf) {
-        PessoaModelo.cpf = cpf;
+        PessoaEstatico.cpf = cpf;
     }
 
     public static long getCarteiraDeTrabalho() {
@@ -44,7 +44,7 @@ public class PessoaModelo {
     }
 
     public static void setCarteiraDeTrabalho(long carteiraDeTrabalho) {
-        PessoaModelo.carteiraDeTrabalho = carteiraDeTrabalho;
+        PessoaEstatico.carteiraDeTrabalho = carteiraDeTrabalho;
     }
 
     public static String getDataDeNascimento() {
@@ -52,7 +52,7 @@ public class PessoaModelo {
     }
 
     public static void setDataDeNascimento(String dataDeNascimento) {
-        PessoaModelo.dataDeNascimento = dataDeNascimento;
+        PessoaEstatico.dataDeNascimento = dataDeNascimento;
     }
 
     public static double getSalarioFixo() {
@@ -60,7 +60,7 @@ public class PessoaModelo {
     }
 
     public static void setSalarioFixo(double salarioFixo) {
-        PessoaModelo.salarioFixo = salarioFixo;
+        PessoaEstatico.salarioFixo = salarioFixo;
     }
 
     public static String getEndereco() {
@@ -68,7 +68,7 @@ public class PessoaModelo {
     }
 
     public static void setEndereco(String endereco) {
-        PessoaModelo.endereco = endereco;
+        PessoaEstatico.endereco = endereco;
     }
     
     

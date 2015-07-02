@@ -5,7 +5,9 @@
  */
 package br.ifes.poo2.oficinamecanica.util;
 
+import br.ifes.poo2.oficinamecanica.exceptions.TipoVendaIncorretoException;
 import br.ifes.poo2.oficinamecanica.cdp.Venda;
+import br.ifes.poo2.oficinamecanica.cdp.VendaPrototipo;
 
 /**
  *
@@ -13,9 +15,8 @@ import br.ifes.poo2.oficinamecanica.cdp.Venda;
  */
 public class FabricaVenda {
     private Venda servico, produto;
-    private final FabricaAbstrataVenda fabrica = new FabricaAbstrataVenda();
-    private final VendaBuilder builder = new VendaBuilder();
-    private final VendaDirector director = new VendaDirector();
+    private VendaBuilder builder = new VendaBuilder();
+    private VendaDirector director = new VendaDirector();
     
     //Singleton
     private static FabricaVenda instancia;
@@ -31,25 +32,36 @@ public class FabricaVenda {
         switch(tipo){
             case "servico":
                 if(servico == null){
-                    servico = fabrica.criarServico();
+                    servico = new VendaPrototipo(Venda.Tipo.SERVICO);
                 } else {
                     servico = servico.clone();
                 }
-                builder.setVenda(servico);
-                servico = director.build(builder);
+                servico = chamarVendaBuilder(servico);
                 return servico;
             case "produto":
                 if(produto == null){
-                    produto = fabrica.criarProduto();
+                    produto = new VendaPrototipo(Venda.Tipo.PRODUTO);
                 } else {
                     produto = produto.clone();
                 }
-                builder.setVenda(produto);
-                produto = director.build(builder);
+                produto = chamarVendaBuilder(produto);
                 return produto;
             default:
                 throw new TipoVendaIncorretoException();
         }
+    }
+    
+    private Venda chamarVendaBuilder(Venda venda){
+        if(builder == null){
+            builder = new VendaBuilder();
+        }
+        if(director == null){
+            director = new VendaDirector();
+        }
+        
+        builder.setVenda(venda);
+        venda = director.build(builder);
+        return venda;
     }
     
 }

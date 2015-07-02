@@ -10,7 +10,7 @@ import br.ifes.poo2.oficinamecanica.cdp.Veiculo;
 import br.ifes.poo2.oficinamecanica.cgt.AplCriarPessoa;
 import br.ifes.poo2.oficinamecanica.cgt.AplCriarVeiculo;
 import br.ifes.poo2.oficinamecanica.cih.VisaoMenu;
-import br.ifes.poo2.oficinamecanica.util.OpcaoIncorretaException;
+import br.ifes.poo2.oficinamecanica.exceptions.OpcaoIncorretaException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

@@ -7,7 +7,7 @@ package br.ifes.poo2.oficinamecanica.cgt;
 
 import br.ifes.poo2.oficinamecanica.cdp.Venda;
 import br.ifes.poo2.oficinamecanica.util.FabricaVenda;
-import br.ifes.poo2.oficinamecanica.util.TipoVendaIncorretoException;
+import br.ifes.poo2.oficinamecanica.exceptions.TipoVendaIncorretoException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

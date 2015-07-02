@@ -5,6 +5,7 @@
  */
 package br.ifes.poo2.oficinamecanica.util;
 
+import br.ifes.poo2.oficinamecanica.cih.PessoaEstatico;
 import br.ifes.poo2.oficinamecanica.cdp.Pessoa;
 
 /**
@@ -23,23 +24,23 @@ public abstract class PessoaBuilder {
     }
     
     public void addNome(){
-        this.pessoa.setNome(PessoaModelo.getNome());
+        this.pessoa.setNome(PessoaEstatico.getNome());
     }
     
     public void addEmail(){
-        this.pessoa.setEmail(PessoaModelo.getEmail());
+        this.pessoa.setEmail(PessoaEstatico.getEmail());
     }
     
     public void addCpf(){
-        this.pessoa.setCpf(PessoaModelo.getCpf());
+        this.pessoa.setCpf(PessoaEstatico.getCpf());
     }
     
     public void addNascimento(){
-        this.pessoa.setNascimento(PessoaModelo.getDataDeNascimento());
+        this.pessoa.setNascimento(PessoaEstatico.getDataDeNascimento());
     }
     
     public void addEndereco(){
-        this.pessoa.setEndereco(PessoaModelo.getEndereco());
+        this.pessoa.setEndereco(PessoaEstatico.getEndereco());
     }
     
     public abstract void addCarteiraDeTrabalho();

@@ -5,6 +5,7 @@
  */
 package br.ifes.poo2.oficinamecanica.util;
 
+import br.ifes.poo2.oficinamecanica.cih.VendaEstatico;
 import br.ifes.poo2.oficinamecanica.cdp.Venda;
 
 /**
@@ -23,35 +24,35 @@ public class VendaBuilder {
     }
     
     public void addDescricao(){
-        venda.setDescricao(VendaModelo.getDescricao());
+        venda.setDescricao(VendaEstatico.getDescricao());
     }
     
     public void addValor(){
-        venda.setValorUnitario(VendaModelo.getValorUnitario());
+        venda.setValorUnitario(VendaEstatico.getValorUnitario());
     }
     
     public void addQuantidade(){
-        venda.setQuantidade(VendaModelo.getQuantidade());
+        venda.setQuantidade(VendaEstatico.getQuantidade());
     }
     
     public void addData(){
-        venda.setDataDaVenda(VendaModelo.getDataDaVenda());
+        venda.setDataDaVenda(VendaEstatico.getDataDaVenda());
     }
     
     public void addStatus(){
-        if (VendaModelo.getStatus() == VendaModelo.Status.ABERTO){
+        if (VendaEstatico.getStatus() == VendaEstatico.Status.ABERTO){
             venda.setStatus(Venda.Status.ABERTO);
         } 
-        else if (VendaModelo.getStatus() == VendaModelo.Status.CONCLUIDO){
+        else if (VendaEstatico.getStatus() == VendaEstatico.Status.CONCLUIDO){
             venda.setStatus(Venda.Status.CONCLUIDO);
         } 
-        else if (VendaModelo.getStatus() == VendaModelo.Status.EMEXECUCAO){
+        else if (VendaEstatico.getStatus() == VendaEstatico.Status.EMEXECUCAO){
             venda.setStatus(Venda.Status.EMEXECUCAO);
         } 
-        else if (VendaModelo.getStatus() == VendaModelo.Status.INSTALADO){
+        else if (VendaEstatico.getStatus() == VendaEstatico.Status.INSTALADO){
             venda.setStatus(Venda.Status.INSTALADO);
         } 
-        else if (VendaModelo.getStatus() == VendaModelo.Status.NAFILA){
+        else if (VendaEstatico.getStatus() == VendaEstatico.Status.NAFILA){
             venda.setStatus(Venda.Status.NAFILA);
         }     
     }

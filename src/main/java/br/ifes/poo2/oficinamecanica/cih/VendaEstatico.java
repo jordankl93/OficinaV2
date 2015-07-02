@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.ifes.poo2.oficinamecanica.util;
+package br.ifes.poo2.oficinamecanica.cih;
 
 
 /**
  *
  * @author RafaelBroedel
  */
-public class VendaModelo {
+public class VendaEstatico {
     
     public enum Status {ABERTO, CONCLUIDO, INSTALADO, EMEXECUCAO, NAFILA};
     private static String descricao;
@@ -24,7 +24,7 @@ public class VendaModelo {
     }
 
     public static void setDescricao(String descricao) {
-        VendaModelo.descricao = descricao;
+        VendaEstatico.descricao = descricao;
     }
 
     public static Double getValorUnitario() {
@@ -32,7 +32,7 @@ public class VendaModelo {
     }
 
     public static void setValorUnitario(Double valorUnitario) {
-        VendaModelo.valorUnitario = valorUnitario;
+        VendaEstatico.valorUnitario = valorUnitario;
     }
 
     public static int getQuantidade() {
@@ -40,7 +40,7 @@ public class VendaModelo {
     }
 
     public static void setQuantidade(int quantidade) {
-        VendaModelo.quantidade = quantidade;
+        VendaEstatico.quantidade = quantidade;
     }
 
     public static String getDataDaVenda() {
@@ -48,7 +48,7 @@ public class VendaModelo {
     }
 
     public static void setDataDaVenda(String dataDaVenda) {
-        VendaModelo.dataDaVenda = dataDaVenda;
+        VendaEstatico.dataDaVenda = dataDaVenda;
     }
 
     public static Status getStatus() {
@@ -56,7 +56,7 @@ public class VendaModelo {
     }
 
     public static void setStatus(Status status) {
-        VendaModelo.status = status;
+        VendaEstatico.status = status;
     }
     
     

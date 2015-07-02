@@ -5,6 +5,7 @@
  */
 package br.ifes.poo2.oficinamecanica.util;
 
+import br.ifes.poo2.oficinamecanica.exceptions.TipoVeiculoIncorretoException;
 import br.ifes.poo2.oficinamecanica.cdp.Veiculo;
 import br.ifes.poo2.oficinamecanica.cdp.VeiculoImp;
 import org.junit.Before;

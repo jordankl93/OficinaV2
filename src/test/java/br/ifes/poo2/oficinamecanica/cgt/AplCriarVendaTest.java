@@ -6,7 +6,7 @@
 package br.ifes.poo2.oficinamecanica.cgt;
 
 import br.ifes.poo2.oficinamecanica.cdp.Venda;
-import br.ifes.poo2.oficinamecanica.util.VendaModelo;
+import br.ifes.poo2.oficinamecanica.cih.VendaEstatico;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -46,15 +46,15 @@ public class AplCriarVendaTest {
      */
     @Test
     public void testCriarServico() throws Exception {
-        VendaModelo.setDescricao("alinhamento");
-        VendaModelo.setQuantidade(2);
-        VendaModelo.setValorUnitario(100.10);
-        VendaModelo.setStatus(VendaModelo.Status.ABERTO);
+        VendaEstatico.setDescricao("alinhamento");
+        VendaEstatico.setQuantidade(2);
+        VendaEstatico.setValorUnitario(100.10);
+        VendaEstatico.setStatus(VendaEstatico.Status.ABERTO);
         
         Venda result = instance.criarServico();
-        assertEquals(VendaModelo.getDescricao(), result.getDescricao());
-        assertEquals(VendaModelo.getQuantidade(), result.getQuantidade());
-        assertEquals(VendaModelo.getValorUnitario(), result.getValorUnitario());
+        assertEquals(VendaEstatico.getDescricao(), result.getDescricao());
+        assertEquals(VendaEstatico.getQuantidade(), result.getQuantidade());
+        assertEquals(VendaEstatico.getValorUnitario(), result.getValorUnitario());
         assertEquals(Venda.Status.ABERTO, result.getStatus());
         assertEquals(200.20, result.getValorTotal(),1); //delta?
     }
@@ -64,15 +64,15 @@ public class AplCriarVendaTest {
      */
     @Test
     public void testCriarProduto() throws Exception {
-        VendaModelo.setDescricao("pneu");
-        VendaModelo.setQuantidade(2);
-        VendaModelo.setValorUnitario(100.10);
-        VendaModelo.setStatus(VendaModelo.Status.INSTALADO);
+        VendaEstatico.setDescricao("pneu");
+        VendaEstatico.setQuantidade(2);
+        VendaEstatico.setValorUnitario(100.10);
+        VendaEstatico.setStatus(VendaEstatico.Status.INSTALADO);
         
         Venda result = instance.criarProduto();
-        assertEquals(VendaModelo.getDescricao(), result.getDescricao());
-        assertEquals(VendaModelo.getQuantidade(), result.getQuantidade());
-        assertEquals(VendaModelo.getValorUnitario(), result.getValorUnitario());
+        assertEquals(VendaEstatico.getDescricao(), result.getDescricao());
+        assertEquals(VendaEstatico.getQuantidade(), result.getQuantidade());
+        assertEquals(VendaEstatico.getValorUnitario(), result.getValorUnitario());
         assertEquals(Venda.Status.INSTALADO, result.getStatus());
         assertEquals(200.20, result.getValorTotal(),1); //delta?
     }
