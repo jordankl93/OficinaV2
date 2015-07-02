@@ -6,7 +6,6 @@
 package br.ifes.poo2.oficinamecanica.cdp;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -18,7 +17,7 @@ public class OrdemDeServico implements Ordem{
     private Double valorTotal;
     
     private Veiculo veiculo;
-    private Cliente cliente;
+    private Pessoa cliente;
     
     private List<Venda> vendasProdutos = new ArrayList<Venda>();
     private List<Venda> vendasServicos = new ArrayList<Venda>();
@@ -47,11 +46,11 @@ public class OrdemDeServico implements Ordem{
         this.veiculo = veiculo;
     }
 
-    public Cliente getCliente() {
+    public Pessoa getCliente() {
         return cliente;
     }
 
-    public void setCliente(Cliente cliente) {
+    public void setCliente(Pessoa cliente) {
         this.cliente = cliente;
     }
 
@@ -70,4 +69,5 @@ public class OrdemDeServico implements Ordem{
     public void setVendasProdutos(Venda vendaProduto) {
         this.vendasProdutos.add(vendaProduto);
     }
+    
 }

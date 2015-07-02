@@ -9,8 +9,8 @@ package br.ifes.poo2.oficinamecanica.util;
  *
  * @author RafaelBroedel
  */
-public class FuncionarioModelo {
-    private static String nome, email;
+public class PessoaModelo {
+    private static String nome, email, endereco;
     private static long cpf, carteiraDeTrabalho;
     private static String dataDeNascimento;
     private static double salarioFixo;
@@ -20,7 +20,7 @@ public class FuncionarioModelo {
     }
 
     public static void setNome(String nome) {
-        FuncionarioModelo.nome = nome;
+        PessoaModelo.nome = nome;
     }
 
     public static String getEmail() {
@@ -28,7 +28,7 @@ public class FuncionarioModelo {
     }
 
     public static void setEmail(String email) {
-        FuncionarioModelo.email = email;
+        PessoaModelo.email = email;
     }
 
     public static long getCpf() {
@@ -36,7 +36,7 @@ public class FuncionarioModelo {
     }
 
     public static void setCpf(long cpf) {
-        FuncionarioModelo.cpf = cpf;
+        PessoaModelo.cpf = cpf;
     }
 
     public static long getCarteiraDeTrabalho() {
@@ -44,7 +44,7 @@ public class FuncionarioModelo {
     }
 
     public static void setCarteiraDeTrabalho(long carteiraDeTrabalho) {
-        FuncionarioModelo.carteiraDeTrabalho = carteiraDeTrabalho;
+        PessoaModelo.carteiraDeTrabalho = carteiraDeTrabalho;
     }
 
     public static String getDataDeNascimento() {
@@ -52,7 +52,7 @@ public class FuncionarioModelo {
     }
 
     public static void setDataDeNascimento(String dataDeNascimento) {
-        FuncionarioModelo.dataDeNascimento = dataDeNascimento;
+        PessoaModelo.dataDeNascimento = dataDeNascimento;
     }
 
     public static double getSalarioFixo() {
@@ -60,7 +60,17 @@ public class FuncionarioModelo {
     }
 
     public static void setSalarioFixo(double salarioFixo) {
-        FuncionarioModelo.salarioFixo = salarioFixo;
+        PessoaModelo.salarioFixo = salarioFixo;
     }
+
+    public static String getEndereco() {
+        return endereco;
+    }
+
+    public static void setEndereco(String endereco) {
+        PessoaModelo.endereco = endereco;
+    }
+    
+    
     
 }

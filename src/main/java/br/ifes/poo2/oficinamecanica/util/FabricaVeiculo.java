@@ -6,6 +6,7 @@
 package br.ifes.poo2.oficinamecanica.util;
 
 import br.ifes.poo2.oficinamecanica.cdp.Veiculo;
+import br.ifes.poo2.oficinamecanica.cdp.VeiculoPrototipo;
 
 /**
  *
@@ -13,7 +14,6 @@ import br.ifes.poo2.oficinamecanica.cdp.Veiculo;
  */
 public class FabricaVeiculo {
     private Veiculo carro, moto, caminhao;
-    private final FabricaAbstrataVeiculo fabrica = new FabricaAbstrataVeiculo();
     private final VeiculoBuilder builder = new VeiculoBuilder();
     private final VeiculoDirector director = new VeiculoDirector();
     
@@ -31,7 +31,7 @@ public class FabricaVeiculo {
         switch(tipo){
             case "carro":
                 if(carro == null){
-                    carro = fabrica.criarCarro();
+                    carro = new VeiculoPrototipo(Veiculo.Tipo.CARRO);
                 } else {
                     carro = carro.clone();
                 }
@@ -40,7 +40,7 @@ public class FabricaVeiculo {
                 return carro;
             case "moto":
                 if(moto == null){
-                    moto = fabrica.criarMoto();
+                    moto = new VeiculoPrototipo(Veiculo.Tipo.MOTO);
                 } else {
                     moto = moto.clone();
                 }
@@ -49,7 +49,7 @@ public class FabricaVeiculo {
                 return moto;
             case "caminhao":
                 if(caminhao == null){
-                    caminhao = fabrica.criarCaminhao();
+                    caminhao = new VeiculoPrototipo(Veiculo.Tipo.CAMINHAO);
                 } else {
                     caminhao = caminhao.clone();
                 }

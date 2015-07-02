@@ -11,15 +11,15 @@ import br.ifes.poo2.oficinamecanica.cdp.Pessoa;
  *
  * @author RafaelBroedel
  */
-public class FuncionarioDirector {
+public class PessoaDirector {
     
-    public Pessoa build (FuncionarioBuilder builder){
+    public Pessoa build (PessoaBuilder builder){
         builder.addNome();
         builder.addCpf();
         builder.addEmail();
         builder.addNascimento();
         builder.addCarteiraDeTrabalho();
         builder.addSalarioFixo();
-        return builder.getFuncionario();
+        return builder.getPessoa();
     }
 }

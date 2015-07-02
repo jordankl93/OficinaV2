@@ -5,9 +5,8 @@
  */
 package br.ifes.poo2.oficinamecanica.util;
 
-import br.ifes.poo2.oficinamecanica.cdp.FuncionarioAbstract;
 import br.ifes.poo2.oficinamecanica.cdp.Pessoa;
-import br.ifes.poo2.oficinamecanica.cdp.PessoaAbstract;
+import br.ifes.poo2.oficinamecanica.cdp.PessoaPrototipo;
 
 /**
  *
@@ -15,10 +14,9 @@ import br.ifes.poo2.oficinamecanica.cdp.PessoaAbstract;
  */
 public class FabricaPessoa {
     private Pessoa cliente, vendedor, gerente;
-    private final FuncionarioBuilder funcionarioBuilder = new FuncionarioBuilder();
-    private final FuncionarioDirector funcionarioDirector = new FuncionarioDirector();
-    private final ClienteBuilder clienteBuilder = new ClienteBuilder();
-    private final ClienteDirector clienteDirector = new ClienteDirector();
+    private PessoaBuilder funcionarioBuilder, clienteBuilder;
+    private PessoaDirector pessoaDirector;
+    
     //Singleton
     private static FabricaPessoa instancia;
     private FabricaPessoa(){};
@@ -33,33 +31,56 @@ public class FabricaPessoa {
         switch(tipo){
             case "cliente":
                 if(cliente == null){
-                    cliente = FabricaAbstrataPessoa.criarCliente();
+                    cliente = new PessoaPrototipo(Pessoa.Tipo.CLIENTE);
                 } else {
                     cliente = cliente.clone();
                 }
-                clienteBuilder.setCliente((PessoaAbstract) cliente);
-                cliente = clienteDirector.build(clienteBuilder);
+                cliente = chamarClienteBuilder(cliente);
                 return cliente;
             case "vendedor":
                 if(vendedor == null){
-                    vendedor = FabricaAbstrataPessoa.criarVendedor();
+                    vendedor = new PessoaPrototipo(Pessoa.Tipo.VENDEDOR);
                 } else {
                     vendedor = vendedor.clone();
                 }
-                funcionarioBuilder.setFuncionario((FuncionarioAbstract) vendedor);
-                vendedor = funcionarioDirector.build(funcionarioBuilder);
+                vendedor = chamarFuncionarioBuilder(vendedor);
                 return vendedor;
             case "gerente":
                 if (gerente == null){
-                    gerente = FabricaAbstrataPessoa.criarGerente();
+                    gerente = new PessoaPrototipo(Pessoa.Tipo.GERENTE);
                 } else {
                     gerente = gerente.clone();
                 }
-                funcionarioBuilder.setFuncionario((FuncionarioAbstract) gerente);
-                gerente = funcionarioDirector.build(funcionarioBuilder);
+                gerente = chamarFuncionarioBuilder(gerente);
                 return gerente;
             default:
                 throw new TipoPessoaIncorretoException();
         }
+    }
+    
+    private Pessoa chamarFuncionarioBuilder(Pessoa pessoa){
+        if (funcionarioBuilder == null){
+            funcionarioBuilder = new FuncionarioBuilder();
+        }
+        if (pessoaDirector == null){
+            pessoaDirector = new PessoaDirector();
+        }
+        
+        funcionarioBuilder.setPessoa(pessoa);
+        pessoa = pessoaDirector.build(funcionarioBuilder);
+        return pessoa;
+    }
+    
+    private Pessoa chamarClienteBuilder(Pessoa pessoa){
+        if (clienteBuilder == null){
+            clienteBuilder = new ClienteBuilder();
+        }
+        if (pessoaDirector == null){
+            pessoaDirector = new PessoaDirector();
+        }
+        
+        clienteBuilder.setPessoa(pessoa);
+        pessoa = pessoaDirector.build(clienteBuilder);
+        return pessoa;
     }
 }

@@ -13,12 +13,12 @@ import java.util.logging.Logger;
  *
  * @author RafaelBroedel
  */
-public class VeiculoImp implements Veiculo{
+public class VeiculoPrototipo implements Veiculo{
     
     private String placa, modelo, cor;
     private Tipo tipo;
 
-    public VeiculoImp(Tipo tipo) {
+    public VeiculoPrototipo(Tipo tipo) {
         this.tipo = tipo;
     }
 
@@ -73,7 +73,7 @@ public class VeiculoImp implements Veiculo{
         try {
             obj = (Veiculo) super.clone();
         } catch (CloneNotSupportedException ex) {
-            Logger.getLogger(PessoaAbstract.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(VeiculoPrototipo.class.getName()).log(Level.SEVERE, null, ex);
         }
         return obj;
     }

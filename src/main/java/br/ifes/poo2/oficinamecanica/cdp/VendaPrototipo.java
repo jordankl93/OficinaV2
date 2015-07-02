@@ -12,7 +12,7 @@ import java.util.logging.Logger;
  *
  * @author RafaelBroedel
  */
-public class VendaImp implements Venda {
+public class VendaPrototipo implements Venda {
     
     private Tipo tipo;
     private String descricao;
@@ -22,7 +22,7 @@ public class VendaImp implements Venda {
     private String dataDaVenda;
     private Status status;
 
-    public VendaImp(Tipo tipo) {
+    public VendaPrototipo(Tipo tipo) {
         this.tipo = tipo;
     }
 
@@ -102,7 +102,7 @@ public class VendaImp implements Venda {
         try {
             obj = (Venda) super.clone();
         } catch (CloneNotSupportedException ex) {
-            Logger.getLogger(PessoaAbstract.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(VendaPrototipo.class.getName()).log(Level.SEVERE, null, ex);
         }
         return obj;
     }

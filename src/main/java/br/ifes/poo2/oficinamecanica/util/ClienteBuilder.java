@@ -5,37 +5,23 @@
  */
 package br.ifes.poo2.oficinamecanica.util;
 
-import br.ifes.poo2.oficinamecanica.cdp.PessoaAbstract;
-
 /**
  *
  * @author RafaelBroedel
  */
-public class ClienteBuilder {
-    private PessoaAbstract cliente;
+public class ClienteBuilder extends PessoaBuilder {
+    
+    //A classe ClienteBuilder deixa os campos carteira de trabalho
+    //e salarioFixo como null.
+    
+    @Override
+    public void addCarteiraDeTrabalho() {
+        
+    }
 
-    public PessoaAbstract getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(PessoaAbstract cliente) {
-        this.cliente = cliente;
-    }
-    
-    public void addNome(){
-        cliente.setNome(ClienteModelo.getNome());
-    }
-    
-    public void addEmail(){
-        cliente.setEmail(ClienteModelo.getEmail());
-    }
-    
-    public void addCpf(){
-        cliente.setCpf(ClienteModelo.getCpf());
-    }
-    
-    public void addNascimento(){
-        cliente.setDataDeNascimento(ClienteModelo.getDataDeNascimento());
+    @Override
+    public void addSalarioFixo() {
+        
     }
 
 }

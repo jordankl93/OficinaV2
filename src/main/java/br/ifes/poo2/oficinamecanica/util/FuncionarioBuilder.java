@@ -5,44 +5,21 @@
  */
 package br.ifes.poo2.oficinamecanica.util;
 
-import br.ifes.poo2.oficinamecanica.cdp.FuncionarioAbstract;
-
 /**
  *
  * @author RafaelBroedel
  */
-public class FuncionarioBuilder {
-    private FuncionarioAbstract funcionario;
+public class FuncionarioBuilder extends PessoaBuilder {
 
-    public FuncionarioAbstract getFuncionario() {
-        return funcionario;
+    @Override
+    public void addCarteiraDeTrabalho() {
+        pessoa.setCarteiraDeTrabalho(PessoaModelo.getCarteiraDeTrabalho());
     }
 
-    public void setFuncionario(FuncionarioAbstract funcionario) {
-        this.funcionario = funcionario;
+    @Override
+    public void addSalarioFixo() {
+        pessoa.setSalarioFixo(PessoaModelo.getSalarioFixo());
+        
     }
-    
-    public void addNome(){
-        funcionario.setNome(FuncionarioModelo.getNome());
-    }
-    
-    public void addEmail(){
-        funcionario.setEmail(FuncionarioModelo.getEmail());
-    }
-    
-    public void addCpf(){
-        funcionario.setCpf(FuncionarioModelo.getCpf());
-    }
-    
-    public void addNascimento(){
-        funcionario.setDataDeNascimento(FuncionarioModelo.getDataDeNascimento());
-    }
-    
-    public void addCarteiraDeTrabalho(){
-        funcionario.setCarteiraDeTrabalho(FuncionarioModelo.getCarteiraDeTrabalho());
-    }
-    
-    public void addSalarioFixo(){
-        funcionario.setSalarioFixo(FuncionarioModelo.getSalarioFixo());
-    }
+
 }
