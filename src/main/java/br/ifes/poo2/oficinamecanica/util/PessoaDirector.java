@@ -20,6 +20,8 @@ public class PessoaDirector {
         builder.addNascimento();
         builder.addCarteiraDeTrabalho();
         builder.addSalarioFixo();
+        builder.addEndereco();
+        
         return builder.getPessoa();
     }
 }

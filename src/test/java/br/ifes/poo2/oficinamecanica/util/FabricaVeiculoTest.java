@@ -7,7 +7,7 @@ package br.ifes.poo2.oficinamecanica.util;
 
 import br.ifes.poo2.oficinamecanica.exceptions.TipoVeiculoIncorretoException;
 import br.ifes.poo2.oficinamecanica.cdp.Veiculo;
-import br.ifes.poo2.oficinamecanica.cdp.VeiculoImp;
+import br.ifes.poo2.oficinamecanica.cdp.VeiculoPrototipo;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -30,7 +30,7 @@ public class FabricaVeiculoTest {
     @Test
     public void testCriarCarro() throws Exception {
         String tipo = "carro";
-        Veiculo expResult = new VeiculoImp(Veiculo.Tipo.CARRO);
+        Veiculo expResult = new VeiculoPrototipo(Veiculo.Tipo.CARRO);
         Veiculo result = instance.criar(tipo);
         assertEquals(expResult.getTipo(), result.getTipo());
     }
@@ -38,7 +38,7 @@ public class FabricaVeiculoTest {
     @Test
     public void testCriarMoto() throws Exception {
         String tipo = "moto";
-        Veiculo expResult = new VeiculoImp(Veiculo.Tipo.MOTO);
+        Veiculo expResult = new VeiculoPrototipo(Veiculo.Tipo.MOTO);
         Veiculo result = instance.criar(tipo);
         assertEquals(expResult.getTipo(), result.getTipo());
     }
@@ -46,7 +46,7 @@ public class FabricaVeiculoTest {
     @Test
     public void testCriarCaminhao() throws Exception {
         String tipo = "caminhao";
-        Veiculo expResult = new VeiculoImp(Veiculo.Tipo.CAMINHAO);
+        Veiculo expResult = new VeiculoPrototipo(Veiculo.Tipo.CAMINHAO);
         Veiculo result = instance.criar(tipo);
         assertEquals(expResult.getTipo(), result.getTipo());
     }

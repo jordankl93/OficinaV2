@@ -7,7 +7,7 @@ package br.ifes.poo2.oficinamecanica.util;
 
 import br.ifes.poo2.oficinamecanica.exceptions.TipoVendaIncorretoException;
 import br.ifes.poo2.oficinamecanica.cdp.Venda;
-import br.ifes.poo2.oficinamecanica.cdp.VendaImp;
+import br.ifes.poo2.oficinamecanica.cdp.VendaPrototipo;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -30,7 +30,7 @@ public class FabricaVendaTest {
     @Test
     public void testCriarServico() throws Exception {
         String tipo = "servico";
-        Venda expResult = new VendaImp(Venda.Tipo.SERVICO);
+        Venda expResult = new VendaPrototipo(Venda.Tipo.SERVICO);
         Venda result = instance.criar(tipo);
         assertEquals(expResult.getTipo(), result.getTipo());
     }
@@ -38,7 +38,7 @@ public class FabricaVendaTest {
     @Test
     public void testCriarProduto() throws Exception {
         String tipo = "produto";
-        Venda expResult = new VendaImp(Venda.Tipo.PRODUTO);
+        Venda expResult = new VendaPrototipo(Venda.Tipo.PRODUTO);
         Venda result = instance.criar(tipo);
         assertEquals(expResult.getTipo(), result.getTipo());
     }

@@ -6,10 +6,8 @@
 package br.ifes.poo2.oficinamecanica.util;
 
 import br.ifes.poo2.oficinamecanica.exceptions.TipoPessoaIncorretoException;
-import br.ifes.poo2.oficinamecanica.cdp.ClienteImp;
-import br.ifes.poo2.oficinamecanica.cdp.GerenteImp;
 import br.ifes.poo2.oficinamecanica.cdp.Pessoa;
-import br.ifes.poo2.oficinamecanica.cdp.VendedorImp;
+import br.ifes.poo2.oficinamecanica.cdp.PessoaPrototipo;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -32,7 +30,7 @@ public class FabricaPessoaTest {
     @Test
     public void testCriarCliente() throws Exception {
         String tipo = "cliente";
-        Pessoa expResult = new ClienteImp();
+        Pessoa expResult = new PessoaPrototipo(Pessoa.Tipo.CLIENTE);
         Pessoa result = fabrica.criar(tipo);
         assertEquals(expResult.getClass(), result.getClass());
     }
@@ -40,7 +38,7 @@ public class FabricaPessoaTest {
     @Test
     public void testCriarVendedor() throws Exception {
         String tipo = "vendedor";
-        Pessoa expResult = new VendedorImp();
+        Pessoa expResult = new PessoaPrototipo(Pessoa.Tipo.VENDEDOR);
         Pessoa result = fabrica.criar(tipo);
         assertEquals(expResult.getClass(), result.getClass());
     }
@@ -48,7 +46,7 @@ public class FabricaPessoaTest {
     @Test
     public void testCriarGerente() throws Exception {
         String tipo = "gerente";
-        Pessoa expResult = new GerenteImp();
+        Pessoa expResult = new PessoaPrototipo(Pessoa.Tipo.GERENTE);
         Pessoa result = fabrica.criar(tipo);
         assertEquals(expResult.getClass(), result.getClass());
     }
