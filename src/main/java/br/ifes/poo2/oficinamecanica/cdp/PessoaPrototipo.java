@@ -12,7 +12,7 @@ import java.util.logging.Logger;
  *
  * @author RafaelBroedel
  */
-public class PessoaPrototipo implements Pessoa{
+public class PessoaPrototipo extends Model implements Pessoa {
     private String nome, email, endereco;
     private long cpf, carteiraDeTrabalho;
     private String nascimento;

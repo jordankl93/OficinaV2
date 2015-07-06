@@ -21,6 +21,7 @@ public class VendaDirector {
         builder.addValor();
         builder.addStatus();
         builder.addValorTotal();
+        builder.addVendedor();
         return builder.getVenda();
     }
 }

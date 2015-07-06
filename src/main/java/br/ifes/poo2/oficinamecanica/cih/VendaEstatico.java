@@ -16,6 +16,7 @@ public class VendaEstatico {
     private static String descricao;
     private static Double valorUnitario;
     private static int quantidade;
+    private static long idVendedor;
     private static String dataDaVenda;
     private static Status status;
 
@@ -58,6 +59,15 @@ public class VendaEstatico {
     public static void setStatus(Status status) {
         VendaEstatico.status = status;
     }
+
+    public static long getIdVendedor() {
+        return idVendedor;
+    }
+
+    public static void setIdVendedor(long idVendedor) {
+        VendaEstatico.idVendedor = idVendedor;
+    }
+    
     
     
 }

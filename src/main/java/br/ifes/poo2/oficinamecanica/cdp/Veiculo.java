@@ -33,4 +33,8 @@ public interface Veiculo extends Cloneable{
     public Tipo getTipo();
 
     public void setTipo(Tipo tipo);
+    
+    public long getId();
+
+    public void setId(long id);
 }

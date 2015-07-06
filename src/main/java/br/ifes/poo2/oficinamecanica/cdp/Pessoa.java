@@ -47,4 +47,8 @@ public interface Pessoa extends Cloneable {
     public String getEndereco();
 
     public void setEndereco(String endereco);
+    
+    public long getId();
+
+    public void setId(long id);
 }

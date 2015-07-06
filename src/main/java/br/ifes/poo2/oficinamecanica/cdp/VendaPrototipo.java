@@ -12,7 +12,7 @@ import java.util.logging.Logger;
  *
  * @author RafaelBroedel
  */
-public class VendaPrototipo implements Venda {
+public class VendaPrototipo extends Model implements Venda {
     
     private Tipo tipo;
     private String descricao;
@@ -21,6 +21,20 @@ public class VendaPrototipo implements Venda {
     private int quantidade;
     private String dataDaVenda;
     private Status status;
+    private Pessoa vendedor;
+
+    public Pessoa getVendedor() {
+        return vendedor;
+    }
+
+    public void setVendedor(Pessoa vendedor) {
+        //if((vendedor.getTipo() == Pessoa.Tipo.VENDEDOR) && (vendedor.getTipo() == Pessoa.Tipo.GERENTE)){
+            this.vendedor = vendedor;
+        //}
+        //else{
+            //retornar exception
+        //}
+    }
 
     public VendaPrototipo(Tipo tipo) {
         this.tipo = tipo;

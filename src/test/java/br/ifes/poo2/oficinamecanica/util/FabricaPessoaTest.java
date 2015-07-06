@@ -32,6 +32,8 @@ public class FabricaPessoaTest {
         String tipo = "cliente";
         Pessoa expResult = new PessoaPrototipo(Pessoa.Tipo.CLIENTE);
         Pessoa result = fabrica.criar(tipo);
+        System.out.println(result.getTipo().name());
+        System.out.println(result.getTipo().toString());
         assertEquals(expResult.getClass(), result.getClass());
     }
     

@@ -21,13 +21,17 @@ public interface Venda extends Cloneable{
     public Double getValorUnitario();
     public void setValorUnitario(Double valorUnitario);
     public Double getValorTotal();
-     public void setValorTotal(Double valorTotal);
-     public int getQuantidade();
-     public void setQuantidade(int quantidade);
+    public void setValorTotal(Double valorTotal);
+    public int getQuantidade();
+    public void setQuantidade(int quantidade);
     public String getDataDaVenda();
     public void setDataDaVenda(String dataDaVenda);
     public Status getStatus();
     public void setStatus(Status status);
+    public long getId();
+    public void setId(long id);
+    public Pessoa getVendedor();
+    public void setVendedor(Pessoa vendedor);
     
     public Venda clone();
 }

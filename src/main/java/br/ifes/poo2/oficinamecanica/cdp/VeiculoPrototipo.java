@@ -13,7 +13,7 @@ import java.util.logging.Logger;
  *
  * @author RafaelBroedel
  */
-public class VeiculoPrototipo implements Veiculo{
+public class VeiculoPrototipo extends Model implements Veiculo{
     
     private String placa, modelo, cor;
     private Tipo tipo;

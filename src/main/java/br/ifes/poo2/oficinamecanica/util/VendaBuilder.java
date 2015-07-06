@@ -5,8 +5,14 @@
  */
 package br.ifes.poo2.oficinamecanica.util;
 
+import br.ifes.poo2.oficinamecanica.cdp.Pessoa;
 import br.ifes.poo2.oficinamecanica.cih.VendaEstatico;
 import br.ifes.poo2.oficinamecanica.cdp.Venda;
+import br.ifes.poo2.oficinamecanica.cgd.DAO;
+import br.ifes.poo2.oficinamecanica.cgd.PessoaDAO;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -60,5 +66,21 @@ public class VendaBuilder {
     public void addValorTotal(){
         Double valorTotal = venda.getValorUnitario() * venda.getQuantidade();
         venda.setValorTotal(valorTotal);
+    }
+    
+    public void addVendedor(){
+        long idVendedor = VendaEstatico.getIdVendedor();
+        DAO dao = new PessoaDAO();
+        Pessoa pessoa;
+        try {
+            pessoa = (Pessoa) dao.findbyID(idVendedor);
+            venda.setVendedor(pessoa);
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println("ERRO P PROCURAR VENDEDOR NO BD");
+            Logger.getLogger(VendaBuilder.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+
+  
     }
 }
